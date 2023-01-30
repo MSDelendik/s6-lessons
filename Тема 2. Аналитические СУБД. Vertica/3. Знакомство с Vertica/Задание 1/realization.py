@@ -1,18 +1,22 @@
 import vertica_python
+from getpass import getpass
 
-conn_info = {'host': '# Адрес сервера из инструкции', 
-             'port': '# Порт из инструкции',
-             'user': '# Полученный логин',       
-             'password': '# Пароль',
+conn_info = {'host': '51.250.75.20', 
+             'port': '5433',
+             'user': 'MLDELENDIK',       
+             'password': 'OVwKgVOn6Tnxhf8',
              'database': 'dwh',
-             # Вначале он нам понадобится, а дальше — решите позже сами
-            'autocommit': True
+             # Вначале автокоммит понадобится, а позже решите сами.
+                         'autocommit': True
 }
 
 def try_select(conn_info=conn_info):
-	# И рекомендуем использовать соединение вот так
-	with vertica_python.connect(**conn_info) as conn:
-		# Select 1 — ваш код здесь; 
-
-		res = cur.fetchall()
-		return res
+    # Рекомендуем использовать соединение:
+    with vertica_python.connect(**conn_info) as conn:
+        # Напишите здесь курсор, который выполняет запрос SELECT 1 as a1; 
+        cur = conn.cursor()
+        cur.execute(""" 
+        select 1 as a1
+        """)
+        res = cur.fetchall()
+        return res
