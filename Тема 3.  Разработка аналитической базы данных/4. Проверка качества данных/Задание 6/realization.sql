@@ -1,0 +1,5 @@
+SELECT count(DISTINCT admin_id)
+FROM MLDELENDIK__STAGING.groups AS g 
+LEFT JOIN MLDELENDIK__STAGING.users AS u 
+ON g.admin_id = u.id
+WHERE u.id IS NULL;
