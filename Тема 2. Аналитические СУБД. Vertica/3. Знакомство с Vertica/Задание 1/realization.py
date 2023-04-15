@@ -3,8 +3,8 @@ from getpass import getpass
 
 conn_info = {'host': '51.250.75.20', 
              'port': '5433',
-             'user': 'MLDELENDIK',       
-             'password': 'OVwKgVOn6Tnxhf8',
+             'user': 'MLDELENDIKYANDEXRU',       
+             'password': 'BA5XD8q7sudmdkC',
              'database': 'dwh',
              # Вначале автокоммит понадобится, а позже решите сами.
                          'autocommit': True

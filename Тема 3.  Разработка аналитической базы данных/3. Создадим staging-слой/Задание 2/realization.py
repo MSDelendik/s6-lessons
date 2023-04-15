@@ -1,1 +1,1 @@
-vertica_user = 'MLDELENDIK'
+vertica_user = 'MLDELENDIKYANDEXRU'
